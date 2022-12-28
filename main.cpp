@@ -14,12 +14,17 @@ int main()
 	sf::RenderWindow window(sf::VideoMode(600, 400), "Test!");
 
 	sf::Texture t;
-	t.loadFromFile("../assets/fang.png");
-	t.loadFromFile("assets/fang.png");
+	if (!(t.loadFromFile("assets/fang.png"))) 
+	{
+		t.loadFromFile("../assets/fang.png");
+	}
+	
 
 	sf::Texture tileSet;
-	tileSet.loadFromFile("assets/blocks.png");
-	tileSet.loadFromFile("../assets/blocks.png");
+	if(!(tileSet.loadFromFile("assets/blocks.png")))
+	{
+		tileSet.loadFromFile("../assets/blocks.png");
+	}
 
 	float currentFrame = 0;
 	
