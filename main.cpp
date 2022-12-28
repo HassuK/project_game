@@ -35,6 +35,7 @@ int main()
 
 	while (window.isOpen())
 	{
+		stayflag = 0;
 		float time = clock.getElapsedTime().asMicroseconds();
 		clock.restart();
 
@@ -56,6 +57,7 @@ int main()
 			p.f = true;
 			p.direction = false;
 		}
+
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 		{
 			p.dx = 0.1;
@@ -66,8 +68,13 @@ int main()
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 		{
-			if (p.onGround) { p.dy = -0.35; p.onGround = false; stayflag = 1; }
+			if (p.onGround) { 
+				p.dy = -0.35; 
+				p.onGround = false; 
+				stayflag = 1; 
+			}
 		}
+
 		if (stayflag != 1)
 		{
 			p.f = false;
