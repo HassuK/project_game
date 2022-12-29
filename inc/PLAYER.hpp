@@ -105,7 +105,7 @@ namespace my {
 
 				}
 		}
-		~PLAYER();
+		~PLAYER() {};
 	};
 	
 }
