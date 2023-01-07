@@ -1,3 +1,5 @@
-﻿  Building Custom Rule C:/Users/frona/Downloads/final_cut/CMakeLists.txt
+﻿  Building Custom Rule C:/Users/hassuk/Downloads/project_game-main/CMakeLists.txt
   main.cpp
-  sfml_sample.vcxproj -> F:\build\finul_cut\Release\sfml_sample.exe
+  PLAYER.cpp
+  Generating Code...
+  sfml_sample.vcxproj -> A:\build\Release\sfml_sample.exe

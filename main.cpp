@@ -6,7 +6,22 @@
 
 int main()
 {
+	Globals TileMap = {
 
+	   "B                                      B",
+	   "B                                BBBBBBB",
+	   "B                                0     B",
+	   "B                                0     B",
+	   "B                                0     B",
+	   "B         0000                BBBB     B",
+	   "B                                B     B",
+	   "BBB                              B     B",
+	   "B              BB                BB    B",
+	   "B              BB                      B",
+	   "B    B         BB          BB          B",
+	   "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
+
+	};
 	const int W = 40;
 
 	int stayflag = 0;
@@ -29,7 +44,7 @@ int main()
 	float currentFrame = 0;
 	
 	sf::Sprite tile(tileSet);
-	my::PLAYER p(t);
+	my::PLAYER p(t, TileMap);
 
 	sf::Clock clock;
 
@@ -52,7 +67,7 @@ int main()
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 		{
-			p.dx = -0.1;
+			p.setX(-0.1);
 			stayflag = 1;
 			p.f = true;
 			p.direction = false;
@@ -60,7 +75,7 @@ int main()
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 		{
-			p.dx = 0.1;
+			p.setX(0.1);
 			stayflag = 1;
 			p.f = true;
 			p.direction = true;
@@ -69,7 +84,7 @@ int main()
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 		{
 			if (p.onGround) { 
-				p.dy = -0.35; 
+				p.setY(-0.35);
 				p.onGround = false; 
 				stayflag = 1; 
 			}
@@ -82,11 +97,11 @@ int main()
 
 		p.update(time);
 
-		if (p.rect.left > 300 && p.rect.left < 980)
+		if (p.getRectLeft() > 300 && p.getRectLeft() < 980)
 		{
-			offsetX = p.rect.left - 300;
+			p.setOffsetX(p.getRectLeft() - 300);
 		}
-		offsetY = p.rect.top - 200;
+		p.setOffsetY(p.getRectTop() - 200);
 
 		window.clear(sf::Color(200, 140, 255));
 
@@ -94,34 +109,35 @@ int main()
 		for (int i = 0; i < H; i++)
 			for (int j = 0; j < W; j++)
 			{
-				if (TileMap[i][j] == 'Z')
+				if (TileMap.TileMap[i][j] == 'Z')
 				{
 					tile.setTextureRect((sf::IntRect(0, 0, 32, 32)));
 				}
 
-				if (TileMap[i][j] == 'B')
+				if (TileMap.TileMap[i][j] == 'B')
 				{
 					tile.setTextureRect((sf::IntRect(0, 80, 32, 32)));
 				}
 
-				if (TileMap[i][j] == '0')
+				if (TileMap.TileMap[i][j] == '0')
 				{
 					tile.setTextureRect((sf::IntRect(240, 80, 32, 32)));
 				}
 
 
-				if (TileMap[i][j] == ' ')
+				if (TileMap.TileMap[i][j] == ' ')
 				{
 					continue;
 				}
 
-				tile.setPosition(j * 32 - offsetX, i * 32 - offsetY);
+				tile.setPosition(j * 32 - p.getOffetX(), i * 32 - p.getOffetY());
 				window.draw(tile);
 			}
 
-		window.draw(p.sprite);
+		window.draw(p.getSprite());
 		window.display();
 	}
+
 
 	return 0;
 }

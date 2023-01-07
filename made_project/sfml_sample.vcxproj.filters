@@ -1,27 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\frona\Downloads\final_cut\main.cpp">
+    <ClCompile Include="C:\Users\hassuk\Downloads\project_game-main\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\hassuk\Downloads\project_game-main\src\PLAYER.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\frona\Downloads\final_cut\inc\PLAYER.hpp">
+    <ClInclude Include="C:\Users\hassuk\Downloads\project_game-main\inc\PLAYER.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\frona\Downloads\final_cut\inc\MAP.hpp">
+    <ClInclude Include="C:\Users\hassuk\Downloads\project_game-main\inc\MAP.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\frona\Downloads\final_cut\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\hassuk\Downloads\project_game-main\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{BC9493D1-0B66-382E-9857-229380BD5BB9}</UniqueIdentifier>
+      <UniqueIdentifier>{C69122D4-F5D6-3321-9CCA-2896C3E1905C}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{7E56431A-80FB-3A96-90CA-4FCAAD6EDFA1}</UniqueIdentifier>
+      <UniqueIdentifier>{DE54A7FD-0C42-33E8-9025-E904E305D85C}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
